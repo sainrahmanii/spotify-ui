@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_ui/screen/signin_signup_screen.dart';
 
 class ChooseModeScreen extends StatelessWidget {
   const ChooseModeScreen({super.key});
@@ -13,7 +14,7 @@ class ChooseModeScreen extends StatelessWidget {
             children: [
               Image.asset(
                 'assets/images/choose mode.png',
-                height: 805,
+                height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 fit: BoxFit.cover,
               ),
@@ -31,10 +32,10 @@ class ChooseModeScreen extends StatelessWidget {
                       width: 196,
                     ),
                     const SizedBox(
-                      height: 470,
+                      height: 340,
                     ),
                     const Text(
-                      "Enjoy Listening To Music",
+                      "Choose Mode",
                       style: TextStyle(
                         fontFamily: 'PoppinsBold',
                         fontSize: 25,
@@ -42,26 +43,73 @@ class ChooseModeScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 32,
                     ),
-                    const Text(
-                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                      style: TextStyle(
-                        fontFamily: 'PoppinsRegular',
-                        color: Color(0xff797979),
-                        fontSize: 12,
-                      ),
-                      textAlign: TextAlign.center,
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Column(
+                          spacing: 17,
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(18),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.white10,
+                              ),
+                              child: const Icon(
+                                Icons.dark_mode_rounded,
+                                color: Colors.white,
+                                size: 32,
+                              ),
+                            ),
+                            const Text(
+                              "Dark Mode",
+                              style: TextStyle(
+                                fontFamily: "PoppinsMedium",
+                                fontSize: 17,
+                                color: Colors.white,
+                              ),
+                            )
+                          ],
+                        ),
+                        Column(
+                          spacing: 17,
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(18),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.white10,
+                              ),
+                              child: const Icon(
+                                Icons.light_mode_rounded,
+                                color: Colors.white,
+                                size: 32,
+                              ),
+                            ),
+                            const Text(
+                              "Light Mode",
+                              style: TextStyle(
+                                fontFamily: "PoppinsMedium",
+                                fontSize: 17,
+                                color: Colors.white,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 68,
                     ),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const ChooseModeScreen(),
+                            builder: (context) => const SigninSignupScreen(),
                           ),
                         );
                       },
@@ -76,7 +124,7 @@ class ChooseModeScreen extends StatelessWidget {
                         ),
                       ),
                       child: const Text(
-                        "Get Started",
+                        "Continue",
                         style: TextStyle(
                           fontFamily: 'PoppinsMedium',
                           fontSize: 22,
