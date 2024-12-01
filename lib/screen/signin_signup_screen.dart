@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_ui/screen/register_screen.dart';
+import 'package:spotify_ui/screen/sign_in_screen.dart';
 
 class SigninSignupScreen extends StatelessWidget {
   const SigninSignupScreen({super.key});
@@ -126,8 +127,7 @@ class SigninSignupScreen extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) =>
-                                        const RegisterScreen(),
+                                    builder: (context) => const SignInScreen(),
                                   ),
                                 );
                               },

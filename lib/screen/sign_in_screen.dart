@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_ui/screen/home_page.dart';
-import 'package:spotify_ui/screen/sign_in_screen.dart';
+import 'package:spotify_ui/screen/register_screen.dart';
 import 'package:spotify_ui/screen/signin_signup_screen.dart';
 
-class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({super.key});
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class RegisterScreen extends StatelessWidget {
                   height: 50,
                 ),
                 const Text(
-                  "Register",
+                  "Sign In",
                   style: TextStyle(
                     fontFamily: 'PoppinsBold',
                     color: Color(0xff383838),
@@ -92,34 +92,7 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 TextFormField(
                   decoration: InputDecoration(
-                    labelText: "Full Name",
-                    labelStyle: const TextStyle(
-                      fontFamily: 'PoppinsMedium',
-                      fontSize: 16,
-                      color: Color(0xff383838),
-                    ),
-                    contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 25,
-                      vertical: 25,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: const BorderSide(
-                        color: Colors.grey,
-                        width: 2.0,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                TextFormField(
-                  decoration: InputDecoration(
-                    labelText: "Enter Email",
+                    labelText: "Enter Username Email",
                     labelStyle: const TextStyle(
                       fontFamily: 'PoppinsMedium',
                       fontSize: 16,
@@ -175,6 +148,19 @@ class RegisterScreen extends StatelessWidget {
                         right: 28,
                       ),
                     ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "Recovery Password",
+                    style: TextStyle(
+                      fontFamily: 'PoppinsMedium',
+                    ),
+                    textAlign: TextAlign.start,
                   ),
                 ),
                 const SizedBox(
@@ -269,7 +255,7 @@ class RegisterScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      "Do You Have An Account ? ",
+                      "Not A Member ",
                       style: TextStyle(
                         fontFamily: 'PoppinsRegular',
                         fontSize: 12,
@@ -284,12 +270,12 @@ class RegisterScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const SignInScreen(),
+                            builder: (context) => const RegisterScreen(),
                           ),
                         );
                       },
                       child: const Text(
-                        "Sign In",
+                        "Register Now",
                         style: TextStyle(
                           fontFamily: 'PoppinsRegular',
                           fontSize: 12,
