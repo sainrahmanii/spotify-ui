@@ -195,8 +195,11 @@ class _HomePageState extends State<HomePage>
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      const DetailSongScreen(),
+                                  builder: (context) => DetailSongScreen(
+                                    image: song[index]["image"]!,
+                                    lagu: song[index]["judul-lagu"]!,
+                                    penyanyi: song[index]["penyanyi"]!,
+                                  ),
                                 ),
                               );
                             },
@@ -219,8 +222,11 @@ class _HomePageState extends State<HomePage>
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      const DetailSongScreen(),
+                                  builder: (context) => DetailSongScreen(
+                                    image: song[index]["image"]!,
+                                    lagu: song[index]["judul-lagu"]!,
+                                    penyanyi: song[index]["penyanyi"]!,
+                                  ),
                                 ),
                               );
                             },
@@ -243,8 +249,11 @@ class _HomePageState extends State<HomePage>
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      const DetailSongScreen(),
+                                  builder: (context) => DetailSongScreen(
+                                    image: song[index]["image"]!,
+                                    lagu: song[index]["judul-lagu"]!,
+                                    penyanyi: song[index]["penyanyi"]!,
+                                  ),
                                 ),
                               );
                             },
@@ -267,8 +276,11 @@ class _HomePageState extends State<HomePage>
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      const DetailSongScreen(),
+                                  builder: (context) => DetailSongScreen(
+                                    image: song[index]["image"]!,
+                                    lagu: song[index]["judul-lagu"]!,
+                                    penyanyi: song[index]["penyanyi"]!,
+                                  ),
                                 ),
                               );
                             },

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class DetailSongScreen extends StatefulWidget {
-  // final String image;
-  // final String lagu;
-  // final String penyanyi;
+  final String image;
+  final String lagu;
+  final String penyanyi;
   const DetailSongScreen({
     super.key,
-    // required this.image,
-    // required this.lagu,
-    // required this.penyanyi,
+    required this.image,
+    required this.lagu,
+    required this.penyanyi,
   });
 
   @override
@@ -18,6 +18,6 @@ class DetailSongScreen extends StatefulWidget {
 class _DetailSongScreenState extends State<DetailSongScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold();
   }
 }
