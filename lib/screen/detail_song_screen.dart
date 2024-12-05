@@ -18,6 +18,6 @@ class DetailSongScreen extends StatefulWidget {
 class _DetailSongScreenState extends State<DetailSongScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold();
   }
 }

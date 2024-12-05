@@ -180,8 +180,11 @@ class _HomePageState extends State<HomePage>
                 child: TabBarView(
                   controller: _tabController,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 33),
+                    Container(
+                      margin: const EdgeInsets.only(
+                        top: 20,
+                        left: 20,
+                      ),
                       child: ListView.builder(
                         itemCount: song.length,
                         scrollDirection: Axis.horizontal,
