@@ -16,7 +16,7 @@ class CardSong extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => onTap,
+      onTap: () => onTap(),
       child: Container(
         padding: const EdgeInsets.only(right: 10),
         width: 147,
