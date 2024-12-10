@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_ui/widgets/audio_player_settings.dart';
 import 'package:spotify_ui/widgets/audio_slider.dart';
 
 class DetailSongScreen extends StatelessWidget {
@@ -113,6 +114,10 @@ class DetailSongScreen extends StatelessWidget {
                   height: 50,
                 ),
                 const AudioSlider(),
+                const SizedBox(
+                  height: 20,
+                ),
+                const AudioPlayerSettings(),
               ],
             ),
           ),
