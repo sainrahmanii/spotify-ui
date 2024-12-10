@@ -5,6 +5,7 @@ import 'package:spotify_ui/data/song_data.dart';
 import 'package:spotify_ui/screen/detail_song_screen.dart';
 import 'package:spotify_ui/widgets/card_playlist.dart';
 import 'package:spotify_ui/widgets/card_song.dart';
+import 'package:spotify_ui/widgets/list_view_song.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -34,6 +35,7 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: const Color(0xffF2F2F2),
       bottomNavigationBar: BottomNavigationBar(
@@ -185,30 +187,8 @@ class _HomePageState extends State<HomePage>
                         top: 20,
                         left: 20,
                       ),
-                      child: ListView.builder(
-                        itemCount: song.length,
-                        scrollDirection: Axis.horizontal,
-                        padding: const EdgeInsets.only(right: 14),
-                        itemBuilder: (context, index) {
-                          return CardSong(
-                            image: song[index]['image'] ?? '-',
-                            lagu: song[index]['judul-lagu'] ?? '-',
-                            penyanyi: song[index]['penyanyi'] ?? '-',
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => DetailSongScreen(
-                                    image: song[index]["image"]!,
-                                    lagu: song[index]["judul-lagu"]!,
-                                    penyanyi: song[index]["penyanyi"]!,
-                                  ),
-                                ),
-                              );
-                            },
-                          );
-                        },
-                      ),
+                      width: size.width * 0.4,
+                      child: ListViewSong(),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 20, left: 33),

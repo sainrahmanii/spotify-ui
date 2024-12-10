@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:spotify_ui/screen/lyrics_screen.dart';
+import 'package:spotify_ui/widgets/arrow_back_with_text.dart';
 import 'package:spotify_ui/widgets/audio_player_settings.dart';
 import 'package:spotify_ui/widgets/audio_slider.dart';
 
@@ -26,36 +29,12 @@ class DetailSongScreen extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.all(12),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF414141).withOpacity(0.04),
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                        child: const Icon(
-                          Icons.arrow_back_ios_new_rounded,
-                          size: 20,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                    const Text(
-                      "Now Playing",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        fontFamily: 'PoppinsBold',
-                      ),
-                    ),
-                    const Icon(Icons.more_vert_rounded),
-                  ],
+                ArrowBackWithText(
+                  titleText: "Now Playing",
+                  colorSquare: const Color(0xFF414141).withOpacity(0.04),
+                  iconColor: Colors.black,
+                  textColor: Colors.black,
+                  iconVertColor: const Color(0XFF7D7D7D),
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 22),
@@ -111,13 +90,35 @@ class DetailSongScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 const AudioSlider(),
                 const SizedBox(
                   height: 20,
                 ),
                 const AudioPlayerSettings(),
+                const SizedBox(
+                  height: 10,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LyricsScreen(
+                          judulLagu: lagu,
+                          image: image,
+                        ),
+                      ),
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      SvgPicture.asset("assets/svgs/arrow-up.svg"),
+                      const Text("Lyrics"),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
