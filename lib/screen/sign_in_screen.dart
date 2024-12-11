@@ -183,7 +183,7 @@ class SignInScreen extends StatelessWidget {
                     ),
                   ),
                   child: const Text(
-                    "Create Account",
+                    "Sign In",
                     style: TextStyle(
                       fontFamily: 'PoppinsBold',
                       fontSize: 20,
