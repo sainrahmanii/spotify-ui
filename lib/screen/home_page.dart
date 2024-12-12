@@ -38,29 +38,6 @@ class _HomePageState extends State<HomePage>
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: const Color(0xffF2F2F2),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/svgs/icon-home.svg"),
-            label: "Home",
-            activeIcon: SvgPicture.asset("assets/svgs/active-home.svg"),
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/svgs/icon-settings.svg"),
-            label: "Settings",
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/svgs/icon-favorite.svg"),
-            label: "Favorite",
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/svgs/icon-profile.svg"),
-            label: "Profile",
-          ),
-        ],
-        selectedItemColor: const Color(0xff42C83C),
-      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -301,7 +278,7 @@ class _HomePageState extends State<HomePage>
                     ],
                   ),
                   SizedBox(
-                    height: 200,
+                    height: MediaQuery.of(context).size.height / 2.5,
                     child: ListView.separated(
                       itemCount: playlist.length,
                       itemBuilder: (context, index) {

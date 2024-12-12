@@ -108,6 +108,7 @@ class DetailSongScreen extends StatelessWidget {
                         builder: (context) => LyricsScreen(
                           judulLagu: lagu,
                           image: image,
+                          singer: penyanyi,
                         ),
                       ),
                     );

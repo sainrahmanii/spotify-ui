@@ -24,7 +24,10 @@ class CardSong extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(image),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(22),
+              child: Image.asset(image),
+            ),
             const SizedBox(
               height: 13,
             ),
