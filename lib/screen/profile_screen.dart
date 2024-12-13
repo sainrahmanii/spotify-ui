@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_ui/data/public_playlist.dart';
 import 'package:spotify_ui/widgets/arrow_back_with_text.dart';
+import 'package:spotify_ui/widgets/public_playlist_item.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -147,20 +149,53 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(
+              Padding(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 16,
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(
-                      "PUBLIC PLAYLISTS",
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
+                    const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "PUBLIC PLAYLISTS",
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 17,
+                    ),
+                    // PublicPlaylistItem(
+                    //   image: image,
+                    //   songName: songName,
+                    //   singerName: singerName,
+                    //   minutes: minutes
+                    // ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height / 1.75,
+                      child: ListView.separated(
+                        itemCount: publicPlaylistItem.length,
+                        itemBuilder: (context, index) {
+                          return PublicPlaylistItem(
+                            image: publicPlaylistItem[index]['image'] ?? '',
+                            songName:
+                                publicPlaylistItem[index]['songName'] ?? '',
+                            singerName:
+                                publicPlaylistItem[index]['singerName'] ?? '',
+                            minutes: publicPlaylistItem[index]['minutes'] ?? '',
+                          );
+                        },
+                        separatorBuilder: (context, index) {
+                          return const SizedBox(
+                            height: 15,
+                          );
+                        },
                       ),
                     )
                   ],
