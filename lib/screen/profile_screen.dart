@@ -178,7 +178,7 @@ class ProfileScreen extends StatelessWidget {
                     //   minutes: minutes
                     // ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height / 1.75,
+                      height: publicPlaylistItem.length * 70,
                       child: ListView.separated(
                         itemCount: publicPlaylistItem.length,
                         itemBuilder: (context, index) {
