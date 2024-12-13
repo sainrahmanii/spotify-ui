@@ -36,6 +36,7 @@ class _NavigationBottomState extends State<NavigationBottom> {
         children: _pages,
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
         selectedItemColor: const Color(0xff42C83C),
         selectedFontSize: 14,
         unselectedFontSize: 14,
